@@ -5,7 +5,7 @@ const endpoints = Router();
 endpoints.post('/emissora/', async (req, resp) => {
     try{
         let emissora = req.body
-        let id = await inserirCanal(emissora)
+        let id = await db.inserirCanal(emissora)
 
         resp.send({
             novoId : id

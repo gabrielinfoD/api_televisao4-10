@@ -15,7 +15,7 @@ export async function inserirFavorito(favorito){
 
 export async function buscarFavorito(){
     const comando = `
-    select id_programa_favorito,
+    select id_programa_favorito
 	id_usuario              usuario,
 	id_canal_programa       canalPrograma,
 	vl_avaliacao            avaliacao 
