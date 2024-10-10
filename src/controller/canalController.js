@@ -36,10 +36,10 @@ endpoints.get('/emissora', async (req, resp) => {
 
 endpoints.put('/emissora/:id', async (req, resp) => {
     try{
-        let id = req.params. id;
+        let id = req.params.id;
         let emissora = req.body;
 
-            let LinhasAfetadas = await db.alterarCanal(id, emissora);
+            let LinhasAfetadas = await db.alterarCanal(emissora, id);
             if (LinhasAfetadas >= 1){
                 resp.send();
             }

@@ -14,9 +14,9 @@ export async function inserirCanal(canal){
 
 export async function buscarCanal(){
     const comando = `
-    select id_canal
-	nm_canal    nomeCanal,
-	nr_canal    numeroCanal,
+    select id_canal ID,
+	nm_canal    nome,
+	nr_canal    numero,
     bt_aberto   aberto
     from  tb_canal;
     `
@@ -30,10 +30,10 @@ export async function buscarCanal(){
 
 export async function alterarCanal(canal, idCanal){
     const comando = `
-    update tb_canal
+    update tb_canal 
     set nm_canal = ?,
-        nr_canal = ? ,
-        bt_aberto =? 
+        nr_canal = ?,
+        bt_aberto = ? 
     where id_canal = ?;
     ` 
     let resposta = await con.query(comando, [canal.nome, canal.numero, canal.aberto, idCanal])
